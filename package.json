@@ -9,6 +9,9 @@
     "heroku-postbuild": "npm run build",
     "start": "serve -s dist"
   },
+  "engines":{
+    "node": "12.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kimaiyo077/Politico-React-App.git"
