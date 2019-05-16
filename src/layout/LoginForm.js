@@ -54,7 +54,7 @@ class LoginForm extends Component {
     
                 if (statusCode == 200){
                     let token = data.token
-                    let email = email
+                    let email = data.User.email
                     let name = data.User.firstname + ' ' + data.User.lastname
                     let nationalId = data.User.nationalId
                     let userId = data.User.userId
@@ -69,7 +69,7 @@ class LoginForm extends Component {
                     if (email == 'admin@admin.com'){
                         this.props.history.push("/login");
                     }else{
-                        this.props.history.push("/");
+                        this.props.history.push("/dashboard");
                     }
                 }
                 else{
