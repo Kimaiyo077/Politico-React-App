@@ -97,7 +97,7 @@ p{
 /* Add support for larger screens*/
 
 @media(min-width: 720px){
-    .grid{
+    .grid-a{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }

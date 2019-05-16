@@ -4,9 +4,9 @@ body{
     line-height: 1.5;
     margin: 0;
     text-align: center;
-    background-color: #ff9718;
+    background-color: gainsboro;
 }
-header{
+.dashheader{
     background-color: #87d7d8;
     color: white;
     border-bottom: 1px solid black; 
