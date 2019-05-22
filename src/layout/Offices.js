@@ -1,36 +1,25 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchOffices } from '../actions/postActions'
 
 class Offices extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      offices: []
-    };
+  componentWillMount() {
+    this.props.fetchOffices();
   }
-  componentDidMount() {
-    fetch(`https://isaac-politico-api-heroku.herokuapp.com/api/v2/offices`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 200) {
-          this.setState({ offices: data.data });
-        } else {
-          displayError(data.error);
-          console.log(data.status);
-        }
-      })
-      .catch(error => {
-        displayError("Please check your connection");
-      });
-  }
+
   render() {
-    const { offices } = this.state;
+    console.log(this.props.items)
+    const officeItems = this.props.items.map(office => (
+      <li>
+          <h2><span>Office: </span>{office.officeName}</h2>
+          <h2><span>Type: </span>{office.officeType}</h2>
+          <i className="fas fa-vote-yea fa-10x"></i>
+          <button type="button" name="name1" ><i className="fas fa-list-ul"></i> List Candidates</button>
+          <button type="button" name="1name" ><i className="fas fa-vote-yea"></i> Cast Vote</button>
+          <button type="button" name="name" ><i className="fas fa-poll"></i> Office Polls</button>
+      </li>
+    ));
     return (
       <div>
           <header className="dashheader">
@@ -46,20 +35,11 @@ class Offices extends Component {
             </nav>
         </header>
           <main>
-            <section class="section-a">
-                <div class="grid-body">
+            <section className="section-a">
+                <div className="grid-body">
                     <h3 id="message"></h3>
-                    <ul id="content" class="content-body">
-                    {offices.map(office => (
-                        <li>
-                            <h2><span>Office: </span>{office.officeName}</h2>
-                            <h2><span>Type: </span>{office.officeType}</h2>
-                            <i class="fas fa-vote-yea fa-10x"></i>
-                            <button type="button" name="name1" ><i class="fas fa-list-ul"></i> List Candidates</button>
-                            <button type="button" name="1name" ><i class="fas fa-vote-yea"></i> Cast Vote</button>
-                            <button type="button" name="name" ><i class="fas fa-poll"></i> Office Polls</button>
-                        </li>
-                    ))}
+                    <ul id="content" className="content-body">
+                        { officeItems }
                     </ul>
                 </div>
             </section>
@@ -69,4 +49,8 @@ class Offices extends Component {
   }
 }
 
-export default Offices;
+const mapStateToProps = state => ({
+  items: state.offices.offices
+});
+
+export default connect(mapStateToProps, { fetchOffices })(Offices);
