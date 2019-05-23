@@ -12,7 +12,7 @@ import NewOffice from './components/NewOffice';
 class App extends Component {
     render(){
         return(
-                <div>
+                <div data-test="component-app">
                     <BrowserRouter>
                         <Route exact path="/" component={Home}></Route>
                         <Route exact path="/login" component={Login}></Route>
