@@ -5,7 +5,7 @@ import HomePage from '../layout/HomePage';
 export class Home extends Component {
   render() {
     return (
-      <div>
+      <div data-test="component-home">
         <HomePage />
       </div>
     )

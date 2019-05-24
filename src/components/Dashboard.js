@@ -5,7 +5,7 @@ import DashPage from '../layout/DashPage';
 class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <div data-test="component-dashboard">
         <DashPage />
       </div>
     )

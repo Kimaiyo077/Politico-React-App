@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom";
+
 import '../styles/forms.css';
 import '../styles/style.css';
 
@@ -51,7 +52,6 @@ class LoginForm extends Component {
     
             .then((data) => {
                 let statusCode = data.status
-    
                 if (statusCode == 200){
                     let token = data.token
                     let email = data.User.email
@@ -67,7 +67,7 @@ class LoginForm extends Component {
                     localStorage.setItem('passportUrl', passportUrl)
     
                     if (email == 'admin@admin.com'){
-                        this.props.history.push("/login");
+                        this.props.history.push("/dashboard");
                     }else{
                         this.props.history.push("/dashboard");
                     }
@@ -81,21 +81,21 @@ class LoginForm extends Component {
 
     render() {
         return (
-                <div>
+                <div data-test="component-login">
                     <main>
                         <section id="section-c">
                             <div className="content-header">
                                 <h3>Sign In</h3>
                             </div>
-                            <form id="signin" className="grid" onSubmit={this.signInHandler}>
+                            <form id="signin" data-test="form-submit" className="grid" onSubmit={this.signInHandler}>
                                 <div className="form">
-                                    <input id="email" type="email" name="email" placeholder="Email" 
+                                    <input id="email" data-test="email-input" type="email" name="email" placeholder="Email" 
                                             value={this.state.email}
                                             onChange={this.emailHandler}/>
                                 </div>
                                 <br></br>
                                 <div className="form">
-                                    <input id="password" type="password" name="password" placeholder="Password"
+                                    <input id="password" data-test="password-input" type="password" name="password" placeholder="Password"
                                            value={this.state.password}
                                            onChange={this.passwordHandler}/>
                                 </div>

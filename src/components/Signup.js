@@ -4,7 +4,7 @@ import SignupForm from "./SignupForm";
 export class Signup extends Component {
   render() {
     return (
-      <div>
+      <div data-test="component-signup">
         <SignupForm />
       </div>
     )
