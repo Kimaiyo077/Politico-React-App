@@ -2,7 +2,8 @@ import { NEW_OFFICE, GET_OFFICES } from '../actions/types';
 
 
 const initialState = {
-    offices: []
+    offices: [],
+    office: []
   };
 
 

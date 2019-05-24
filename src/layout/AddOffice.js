@@ -50,7 +50,7 @@ class AddOffice extends Component {
                             <div className="content-header">
                                 <h3>New Government Office</h3>
                             </div>
-                            <form onSubmit={this.addOfficeHandler} className="grid" id="newOffice">
+                            <form data-test="form-submit" onSubmit={this.addOfficeHandler} className="grid" id="newOffice">
                                 <div className="form">
                                     <input type="text" id="officeName" name="name" placeholder="Office Name"
                                     value={this.state.name}

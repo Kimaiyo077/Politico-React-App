@@ -4,7 +4,7 @@ import Offices from '../layout/Offices';
 class Office extends Component {
     render() {
         return(
-            <div>
+            <div data-test="component-offices">
                 <Offices />
             </div>
         )

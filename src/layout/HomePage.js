@@ -5,7 +5,7 @@ import '../styles/main.css';
 class HomePage extends Component {
   render() {
     return (
-        <div>
+        <div data-test="component-homepage">
             <div className="body">
                 <header>
                     <div id="content-header">
@@ -18,7 +18,7 @@ class HomePage extends Component {
                     </div>
                 </header>
                 <main id="main">
-                    <section id="section-a" className="grid-a">
+                    <section data-test = "component-section" id="section-a" className="grid-a">
                         <ul className="info">
                             <li>
                                 <div className="card">

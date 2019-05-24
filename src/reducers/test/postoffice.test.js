@@ -1,4 +1,4 @@
-import { GET_OFFICES } from '../../actions/types';
+import { GET_OFFICES, NEW_OFFICE } from '../../actions/types';
 import postOfficeReducer from  '../postOffice';
 
 
@@ -6,7 +6,8 @@ test("Return object with empty offices array as initial state", () => {
     const newState = postOfficeReducer(undefined, {});
   
     expect(newState).toEqual({
-      offices: []
+      offices: [],
+      office: []
     });
   });
 
@@ -31,6 +32,27 @@ test("Return object with empty offices array as initial state", () => {
     });
   
     expect(newState).toEqual({
-      offices: officeList
+      offices: officeList,
+      office: []
+    });
+  });
+
+  test("should set state to office list", () => {
+    const officeList = [
+      {
+        id: 1,
+        officeName: "President",
+        officeType: "Federal"
+      }
+    ];
+  
+    const newState = postOfficeReducer(undefined, {
+      type: NEW_OFFICE,
+      payload: officeList
+    });
+  
+    expect(newState).toEqual({
+      offices: [],
+      office: officeList
     });
   });

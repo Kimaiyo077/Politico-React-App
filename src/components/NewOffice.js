@@ -4,7 +4,7 @@ import AddOffice from '../layout/AddOffice';
 class NewOffice extends Component {
   render() {
     return (
-      <div>
+      <div data-test="component-newoffice">
         <AddOffice />
       </div>
     )

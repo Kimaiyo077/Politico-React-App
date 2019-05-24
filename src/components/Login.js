@@ -4,7 +4,7 @@ import LoginForm from '../layout/LoginForm';
 class Login extends Component {
     render() {
         return(
-            <div>
+            <div data-test="component-login">
                 <LoginForm />
             </div>
         )

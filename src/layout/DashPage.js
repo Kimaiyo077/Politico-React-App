@@ -10,7 +10,7 @@ export default function DashPage() {
     let id = localStorage.getItem('nationalId')
     let url = localStorage.getItem('passportUrl')
   return (
-    <div>
+    <div data-test="component-dashpage">
         <header className="dashheader">
             <nav>
                 <ul className="nav-bar">
