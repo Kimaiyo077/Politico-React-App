@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DashPage from '../layout/DashPage';
+import DashPage from '../../containers/DashPage';
 
 
 class Dashboard extends Component {

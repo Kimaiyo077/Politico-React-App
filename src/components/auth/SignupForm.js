@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import '../styles/forms.css';
-import '../styles/style.css';
+import '../../styles/forms.css';
+import '../../styles/style.css';
 
 class SignupForm extends Component {
     constructor(props){

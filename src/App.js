@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Home from './components/Home';
-import Dashboard from './components/Dashboard';
-import Office from './components/Office';
-import NewOffice from './components/NewOffice';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import Home from './components/dashboard/Home';
+import Dashboard from './components/dashboard/Dashboard';
+import Office from './components/offices/Office';
+import NewOffice from './components/offices/NewOffice';
+import Parties from './components/parties/Parties';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                         <Route exact path="/dashboard" component={Dashboard}></Route>
                         <Route exact path="/offices" component={Office}></Route>
                         <Route exact path="/office" component={NewOffice}></Route>
+                        <Route exact path="/parties" component={Parties}></Route>
                     </BrowserRouter>
                 </div>
             );

@@ -15,7 +15,7 @@ export default function DashPage() {
             <nav>
                 <ul className="nav-bar">
                     <li className="nav-item"><Link to="/dashboard">Home</Link></li>
-                    <li className="nav-item"><a href="political_parties.html">Parties</a></li>
+                    <li className="nav-item"><Link to="parties">Parties</Link></li>
                     <li className="nav-item"><Link to="offices">Offices</Link></li>
                     <li className="nav-item"><a href="interest.html">Interest</a></li>
                     <li className="nav-item"><a href="votes.html">Your Votes</a></li>

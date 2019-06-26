@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  { connect } from 'react-redux'; 
 
-import { addOffice } from '../actions/postActions'; 
+import { addOffice } from '../redux/actions/postActions'; 
 import '../styles/forms.css';
 import '../styles/style.css'; 
 

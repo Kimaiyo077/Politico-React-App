@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOffices } from '../actions/postActions'
+import { fetchOffices } from '../redux/actions/postActions'
 
 class Offices extends Component {
   componentWillMount() {
@@ -26,7 +26,7 @@ class Offices extends Component {
             <nav>
                 <ul className="nav-bar">
                     <li className="nav-item"><Link to="/dashboard">Home</Link></li>
-                    <li className="nav-item"><a href="political_parties.html">Parties</a></li>
+                    <li className="nav-item"><Link to="parties">Parties</Link></li>
                     <li className="nav-item"><Link to="offices">Offices</Link></li>
                     <li className="nav-item"><a href="interest.html">Interest</a></li>
                     <li className="nav-item"><a href="votes.html">Your Votes</a></li>
