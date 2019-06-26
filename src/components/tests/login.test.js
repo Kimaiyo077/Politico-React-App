@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Login from '../Login';
+import Login from '../auth/Login';
 
 describe("App should contain routes", () => {
     test("should render without error", () => {

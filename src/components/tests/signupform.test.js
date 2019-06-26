@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 
-import SignupForm from '../SignupForm';
+import SignupForm from '../auth/SignupForm';
 
 const setup = (props={}) => {
     return mount(
