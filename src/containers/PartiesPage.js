@@ -9,14 +9,13 @@ class PartiesPage extends Component {
     }
     
     render() {
-        console.log(this.props.items)
-        const partyItems = this.props.items.map(party => (
-        <li>
-            <h2>{party.partyName}</h2>
-            <img src={party.logoUrl} alt="party image"/>
-            <h4>Hq Address</h4>
-            <h3>{party.hqAddress}</h3>
-        </li>
+        const partyItems = this.props.items.map(({partyName, logoUrl, hqAddress, partyId}) => (
+            <li key={partyId}>
+                <h2>{partyName}</h2>
+                <img src={logoUrl} alt="party image"/>
+                <h4>Hq Address</h4>
+                <h3>{hqAddress}</h3>
+            </li>
         ));
         return (
             <div>

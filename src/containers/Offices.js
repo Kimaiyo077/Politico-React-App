@@ -9,11 +9,10 @@ class Offices extends Component {
   }
 
   render() {
-    console.log(this.props.items)
-    const officeItems = this.props.items.map(office => (
-      <li>
-          <h2><span>Office: </span>{office.officeName}</h2>
-          <h2><span>Type: </span>{office.officeType}</h2>
+    const officeItems = this.props.items.map(({officeName, officeType, officeId}) => (
+      <li key = {officeId}>
+          <h2><span>Office: </span>{officeName}</h2>
+          <h2><span>Type: </span>{officeType}</h2>
           <i className="fas fa-vote-yea fa-10x"></i>
           <button type="button" name="name1" ><i className="fas fa-list-ul"></i> List Candidates</button>
           <button type="button" name="1name" ><i className="fas fa-vote-yea"></i> Cast Vote</button>
