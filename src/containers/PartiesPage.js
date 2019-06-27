@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import  { fetchParties } from '../redux/actions/getActions';
 
-class PartiesPage extends Component {
+export class PartiesPage extends Component {
     componentWillMount(){
         this.props.fetchParties();
     }
@@ -18,7 +18,7 @@ class PartiesPage extends Component {
             </li>
         ));
         return (
-            <div>
+            <div data-test="component-party">
                 <header className="dashheader">
                     <nav>
                         <ul className="nav-bar">
@@ -50,4 +50,4 @@ const mapStateToProps = state => ({
     items: state.parties.parties
   });
 
-  export default connect(mapStateToProps, { fetchParties })(PartiesPage);
+export default connect(mapStateToProps, { fetchParties })(PartiesPage);

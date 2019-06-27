@@ -4,7 +4,7 @@ import PartiesPage from  '../../containers/PartiesPage';
 export class Parties extends Component {
     render() {
         return (
-            <div>
+            <div data-test="component-party">
                 <PartiesPage />
             </div>
         )

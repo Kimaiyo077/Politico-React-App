@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchOffices } from '../redux/actions/postActions'
 
-class Offices extends Component {
+export class Offices extends Component {
   componentWillMount() {
     this.props.fetchOffices();
   }
@@ -20,7 +20,7 @@ class Offices extends Component {
       </li>
     ));
     return (
-      <div>
+      <div data-test="component-offices">
           <header className="dashheader">
             <nav>
                 <ul className="nav-bar">

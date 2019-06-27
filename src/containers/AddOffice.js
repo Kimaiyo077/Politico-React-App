@@ -6,7 +6,7 @@ import '../styles/forms.css';
 import '../styles/style.css'; 
 
 
-class AddOffice extends Component {
+export class AddOffice extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -43,7 +43,7 @@ class AddOffice extends Component {
     }
     render() {
         return ( 
-            <div>
+            <div data-test="component-office">
                 <div>
                     <main>
                         <section id="section-b">
@@ -53,12 +53,14 @@ class AddOffice extends Component {
                             <form data-test="form-submit" onSubmit={this.addOfficeHandler} className="grid" id="newOffice">
                                 <div className="form">
                                     <input type="text" id="officeName" name="name" placeholder="Office Name"
+                                    data-test="name-input"
                                     value={this.state.name}
                                     onChange={this.nameHandler}/>
                                 </div>
                                 <br/>
                                 <div className="form">
                                     <input type="text" id="officeType" name="type" placeholder="Office Type"
+                                    data-test="type-input"
                                     value={this.state.type}
                                     onChange={this.typeHandler}/>
                                 </div>
