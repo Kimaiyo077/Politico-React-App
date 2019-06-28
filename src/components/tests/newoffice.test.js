@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import NewOffice from '../NewOffice';
+import NewOffice from '../offices/NewOffice';
 
 describe("App should contain routes", () => {
     test("should render without error", () => {

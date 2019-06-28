@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Home from '../Home';
+import Home from '../dashboard/Home';
 
 describe("App should contain routes", () => {
     test("should render without error", () => {

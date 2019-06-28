@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOffices } from '../actions/postActions'
+import { fetchOffices } from '../redux/actions/postActions'
 
-class Offices extends Component {
+export class Offices extends Component {
   componentWillMount() {
     this.props.fetchOffices();
   }
 
   render() {
-    console.log(this.props.items)
-    const officeItems = this.props.items.map(office => (
-      <li>
-          <h2><span>Office: </span>{office.officeName}</h2>
-          <h2><span>Type: </span>{office.officeType}</h2>
+    const officeItems = this.props.items.map(({officeName, officeType, officeId}) => (
+      <li key = {officeId}>
+          <h2><span>Office: </span>{officeName}</h2>
+          <h2><span>Type: </span>{officeType}</h2>
           <i className="fas fa-vote-yea fa-10x"></i>
           <button type="button" name="name1" ><i className="fas fa-list-ul"></i> List Candidates</button>
           <button type="button" name="1name" ><i className="fas fa-vote-yea"></i> Cast Vote</button>
@@ -21,12 +20,12 @@ class Offices extends Component {
       </li>
     ));
     return (
-      <div>
+      <div data-test="component-offices">
           <header className="dashheader">
             <nav>
                 <ul className="nav-bar">
                     <li className="nav-item"><Link to="/dashboard">Home</Link></li>
-                    <li className="nav-item"><a href="political_parties.html">Parties</a></li>
+                    <li className="nav-item"><Link to="parties">Parties</Link></li>
                     <li className="nav-item"><Link to="offices">Offices</Link></li>
                     <li className="nav-item"><a href="interest.html">Interest</a></li>
                     <li className="nav-item"><a href="votes.html">Your Votes</a></li>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddOffice from '../layout/AddOffice';
+import AddOffice from '../../containers/AddOffice';
 
 class NewOffice extends Component {
   render() {

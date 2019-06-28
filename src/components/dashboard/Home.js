@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomePage from '../layout/HomePage';
+import HomePage from '../../containers/HomePage';
 
 
 export class Home extends Component {
